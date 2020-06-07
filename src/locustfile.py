@@ -10,3 +10,5 @@ class WebsiteUser(HttpUser):
     @task
     def some_step(self):
         self.client.get("/")
+
+    #TODO how to make the client failed on purpose; this not working > raise Exception('FAIL ON PURPOSE')
