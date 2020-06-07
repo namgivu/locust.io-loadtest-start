@@ -41,3 +41,17 @@ ref. https://docs.locust.io/en/stable/quickstart.html
 
 # easy wireup with docker
 ref. https://docs.locust.io/en/stable/running-locust-docker.html#docker-compose
+
+# plug in selenium appium
+we have automate script prepared [here](https://gitlab.com/namgivu/browserstack-start)
+which runs simple google search on multiple desktop+mobile browser
+
+we will run them under locust loadtest here to test 10 concurrent users
+
+so to have locust run with headless webdriver coming from selenium and appium, 
+we follow guide [here](https://stackoverflow.com/a/60609708/248616) which leads us to [realbrowserlocusts](https://github.com/nickboucart/realbrowserlocusts)
+they use local browser here, how to make it working with browserstack ones?
+
+a better approach will be 
+00 wrapp those selenium+appium run into api endpoint aka xxium endpoint
+01 locust will run loadtest against xxium endpoint
